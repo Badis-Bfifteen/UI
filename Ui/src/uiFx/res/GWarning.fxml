@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="222.0" prefWidth="522.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uiFx.controllers.GWarning">
+   <children>
+      <Button fx:id="buttonQuit" layoutX="403.0" layoutY="179.0" onAction="#quit" prefHeight="29.0" prefWidth="95.0" text="_OK">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="190.0" layoutY="14.0" text="WARNING !!" textFill="#bf3a3a">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="57.0" text="- Unexpected behavior may occur for unproper top-down parsing grammar !">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="77.0" text="- Unexpected behavior may occur if grammar writing format is not respected !">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="142.0" text="- if the above is not respected you are advised to reset grammar to default .">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="184.0" prefHeight="20.0" prefWidth="185.0" text="Note : &quot;#&quot; is Epsilon.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

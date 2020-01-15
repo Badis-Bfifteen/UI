@@ -1,0 +1,5 @@
+Expression->Term,AS
+AS->+,Term,AS|-,Term,AS|#
+Term->Factor,MS
+MS->*,Factor,MS|/,Factor,MS|#
+Factor->INTEGER|IDENTIFIER|(,Expression,)

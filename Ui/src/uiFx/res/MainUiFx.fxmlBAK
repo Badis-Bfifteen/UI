@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uiFx.controllers.MainUiController">
+   <children>
+      <VBox fx:id="vBoxMain" layoutX="1.0" layoutY="1.0">
+         <children>
+            <MenuBar VBox.vgrow="NEVER">
+               <menus>
+                  <Menu text="_File">
+                     <items>
+                        <MenuItem onAction="#menuClearConsole" text="Clea_r Console" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuItemQuit" onAction="#quit" text="_Quit" />
+                     </items>
+                  </Menu>
+                  <Menu text="_Help">
+                     <items>
+                        <MenuItem text="_About LL1Parser" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="665.0" prefWidth="972.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <ImageView fx:id="imageViewTop" fitHeight="96.0" fitWidth="972.0" pickOnBounds="true" smooth="false">
+                                       <image>
+                                          <Image url="@../../Header.gif" />
+                                       </image></ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="970.0">
+                                 <children>
+                                    <TextField fx:id="textFieldExpression" layoutX="230.0" layoutY="24.0" onKeyReleased="#Exp" prefHeight="48.0" prefWidth="487.0" />
+                                    <Button fx:id="buttonGrammar" layoutX="14.0" layoutY="24.0" onAction="#OnClickGrammar" prefHeight="48.0" prefWidth="84.0" text="_Grammar" textAlignment="CENTER" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <Label fx:id="labelExpression" layoutX="116.0" layoutY="24.0" prefHeight="48.0" prefWidth="116.0" text="Enter Expression :" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Button fx:id="buttonUseFile" layoutX="893.0" layoutY="24.0" onAction="#fileChooser" prefHeight="48.0" prefWidth="63.0" text="_Use File" textAlignment="CENTER" wrapText="true" />
+                                    <Label fx:id="labelLL1State" layoutX="727.0" layoutY="24.0" prefHeight="48.0" prefWidth="148.0" text="Correct/False" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font></Label>
+                                    <Button fx:id="buttonFileRefresh" layoutX="844.0" layoutY="36.0" mnemonicParsing="false" onAction="#fileRefresh" prefHeight="25.0" prefWidth="31.0" text="🔁" textAlignment="CENTER" visible="false" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                        <SplitPane dividerPositions="0.40301724137931033" orientation="VERTICAL" prefHeight="466.0" prefWidth="972.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <CheckBox fx:id="checkboxParser" layoutX="14.0" layoutY="116.0" onAction="#parserIfUnchecked" prefHeight="48.0" prefWidth="260.0" selected="true" text="_Parser">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font></CheckBox>
+                                    <Label fx:id="labelLexerState" layoutX="288.0" layoutY="20.0" prefHeight="48.0" prefWidth="222.0" text="Lexical Analisys Succ/Fail">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                    <Label fx:id="labelParserState" layoutX="288.0" layoutY="116.0" prefHeight="48.0" prefWidth="222.0" text="Parsing Succ/Fail">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
+                                    <Button fx:id="buttonTokens" layoutX="696.0" layoutY="20.0" prefHeight="48.0" prefWidth="260.0" text="Acces _Tokens" textAlignment="CENTER" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <Button fx:id="buttonParsing" layoutX="696.0" layoutY="116.0" prefHeight="48.0" prefWidth="260.0" text="See Pa_rsing Procces" textAlignment="CENTER" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
+                                    <CheckBox fx:id="checkboxLexer" layoutX="14.0" layoutY="20.0" onAction="#lexerifUnchecked" prefHeight="48.0" prefWidth="260.0" selected="true" text="_Lexer">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Pane prefHeight="268.0" prefWidth="972.0">
+                                       <children>
+                                          <Label fx:id="labelConsole" layoutX="14.0" layoutY="2.0" prefHeight="25.0" prefWidth="104.0" text="Console">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Button layoutX="833.0" layoutY="235.0" onAction="#clearConsole" prefHeight="25.0" prefWidth="125.0" text="_Clear Console">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Button>
+                                          <TextArea fx:id="textAreaConsole" editable="false" layoutX="14.0" layoutY="27.0" prefHeight="200.0" prefWidth="944.0" wrapText="true" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <TextArea fx:id="textAreaTempSave" editable="false" layoutX="651.0" layoutY="-213.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+   </children>
+</AnchorPane>
